@@ -1,4 +1,5 @@
 {
 	"name": "ExampleModule",
-	"files": ["*.js"]
+	"files": ["*.js"],
+	"submodules": ["subdir/ng-module.json"]
 }
