@@ -1,5 +1,5 @@
 {
 	"name": "ExampleModule",
-	"files": ["*.js"],
+	"globs": ["*.js"],
 	"submodules": ["subdir/ng-module.json"]
 }

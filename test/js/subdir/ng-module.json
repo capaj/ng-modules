@@ -1,4 +1,4 @@
 {
 	"name": "submodule",
-	"files": ["*.js"]
+	"globs": ["*.js"]
 }
