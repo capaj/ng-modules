@@ -18,7 +18,7 @@ var createModule = function(pathToJSON, relativeTo) {
 	console.log("parsing JSON: " + pathToJSON);
 
 	var moduleDef = JSON.parse(moduleString);
-	var scriptsArr = [];
+	var scriptsArr = [{start: true, src: pathToJSON}];
 
 	if (Array.isArray(moduleDef.submodules)) {
 		moduleDef.submodules.forEach(function(sub) {
@@ -39,6 +39,8 @@ var createModule = function(pathToJSON, relativeTo) {
 		});
 	}
 
+	scriptsArr.push({src: pathToJSON});
+
 	return scriptsArr;
 };
 
@@ -47,42 +49,62 @@ var createModule = function(pathToJSON, relativeTo) {
  * @param {String} to name of the file to create
  */
 module.exports = function(filename, to) {
-	var scriptElements = '';
+
 	var relativeToHtml = filename.substring(0, filename.lastIndexOf('/') + 1);
 
-	var f = fs.readFileSync(filename, 'utf8');
-	var splitted = f.split(/<ng-module/g);
-	if (splitted.last.length === 0) {
+	var html = fs.readFileSync(filename, 'utf8');
+	var moduleElements = html.match(/<ngmodule src="([^"]+)">\s*<\/ngmodule>/g);
+	if (moduleElements.last.length === 0) {
 		console.error("ng-module element should not be at the very end of your html document");
 	}
 
 	var cwd = process.cwd();
 	process.chdir(relativeToHtml);
 
-	var item;
-	while(item = splitted.pop()) {
-		var srcIndex = item.indexOf('src=');
-		if (srcIndex !== -1) {
-			//this is a proper module element with src attribute
-			item = item.substr(srcIndex + 5);
+	/**
+	 * type <String> moduleElement
+	 */
+	var mEl;
 
-			var jsonPath = item.substr(0, item.indexOf('"'));
-			var dir = jsonPath.substring(0, jsonPath.lastIndexOf('/') + 1);
+	while(mEl = moduleElements.pop()) {
 
-			var scripts = createModule(jsonPath, dir);
-			scripts.forEach(function (script){
-			    scriptElements += '<script src="' + script + ' "></script>'
-			});
+		var appendNL = function(nl) {
+			toInsert += '\r\n' + nl;
+		};
+		var toInsert = '';	//the string we will insert into HTML
 
-		} else {
-			throw 'ng-module element lacks required src attribute';
-		}
+		var jsonPath = mEl.substring(mEl.indexOf('"') + 1, mEl.lastIndexOf('"'));
+		var dir = jsonPath.substring(0, jsonPath.lastIndexOf('/') + 1);
+
+		var scripts = createModule(jsonPath, dir);
+		scripts.forEach(function (script){
+			if (typeof script === 'object') {
+				if (script.start) {
+					appendNL('<ngmodule src="' + script.src + '">');
+				} else {
+					appendNL('</ngmodule>');
+				}
+			} else {
+				appendNL('<script src="' + script + '"></script>');
+			}
+		});
+
+		html = html.replace(mEl, toInsert);
+
+
 	}
+
+	fs.writeFileSync(to, html, 'utf8', function(e) {
+		if (e) {
+			console.error("file succesfully written");
+		}
+		console.log("file succesfully written");
+	});
 
 
 	process.chdir(cwd);
 
-	console.log("all script elements added are");
-	console.log(scriptElements);
+	//console.log("all script elements added are");
+	//console.log(toInsert);
 
 };
