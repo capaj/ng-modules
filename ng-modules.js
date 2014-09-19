@@ -67,9 +67,10 @@ module.exports = function(filename, to) {
 	var mEl;
 
 	while(mEl = moduleElements.pop()) {
+		var indentation = 1;
 
 		var appendNL = function(nl) {
-			toInsert += '\r\n' + nl;
+			toInsert += '\r\n' + Array(indentation + 1).join('\t') + nl;
 		};
 		var toInsert = '';	//the string we will insert into HTML
 
@@ -81,7 +82,9 @@ module.exports = function(filename, to) {
 			if (typeof script === 'object') {
 				if (script.start) {
 					appendNL('<ngmodule src="' + script.src + '">');
+					indentation++;
 				} else {
+					indentation--;
 					appendNL('</ngmodule>');
 				}
 			} else {
