@@ -1,6 +1,6 @@
 var fs = require('fs');
 require('array-sugar');
-
+var path = require('path');
 var glob = require('glob');
 var createModule = function(pathToJSON, relativeTo) {
 	if (!relativeTo) {
@@ -50,7 +50,7 @@ var createModule = function(pathToJSON, relativeTo) {
  */
 module.exports = function(filename, to) {
 
-	var relativeToHtml = filename.substring(0, filename.lastIndexOf('/') + 1);
+	var relativeToHtml = path.dirname(filename);
 
 	var html = fs.readFileSync(filename, 'utf8');
 	var moduleElements = html.match(/<ngmodule src="([^"]+)">\s*<\/ngmodule>/g);

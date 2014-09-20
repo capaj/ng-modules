@@ -1,52 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/Gruntfile.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/index.html" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/js/Zen/Apps/app_android_av_svc.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/js/Zen/Apps/app_av_svc.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/js/Zen/Apps/app_tu_svc.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/js/Zen/Apps/installer_svc.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/js/Zen/DataServices/ui_data_logic_svc.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/js/Zen/Directives/z_app.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/js/Zen/Factories/z_app.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/js/Zen/Factories/z_device.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/js/Zen/Factories/z_group.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/js/Zen/Logging/log_decorator.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/js/Zen/OCM/ocm_svc.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/js/Zen/Services/devices_svc.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/js/Zen/zenAppBootstrap.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/json/apps/mac_AV.json" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/json/groups/android_groups.json" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/less/apps.less" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/templates/app_offers/AndAVOffer.html" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/templates/app_states/AV_state.html" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/templates/app_states/mac_AV_state.html" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/templates/app_states/tuneup_state.html" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/app/templates/device_settings/deviceSettingsFormTmpl.html" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/bower.json" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/cucumberConf.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/features/apps/AV/local/AV_installation.feature" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/features/apps/AV/remote/state_v3.feature" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/features/smoketests/momentTranslations.feature" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/features/smoketests/smoketest.feature" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/features/smoketests/translationOverflow.feature" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/features/step_definitions/apps/av/AV_Installation_steps.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/features/step_definitions/apps/av/remote/states_steps.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/features/step_definitions/momentTranslationsSteps.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/features/support/dashboard_page.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/features/support/support.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/package.json" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/scripts/languages2json.js" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/test/mock/remote_install.json" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/test/mock/remote_install.json" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/test/mock/tiles_with_dates.json" charset="UTF-8" />
-    <file url="file://C:/git_devel/zen/gui/zuiplugin_dll/test/mock/with_mac.json" charset="UTF-8" />
-    <file url="file://C:/git_working/zen/gui/zuiplugin_dll/app/js/Zen/Directives/z_bubble_area.js" charset="UTF-8" />
-    <file url="file://C:/git_working/zen/gui/zuiplugin_dll/app/js/Zen/OCM/ocm_svc.js" charset="UTF-8" />
-    <file url="file://C:/git_working/zen/gui/zuiplugin_dll/app/js/Zen/Services/gms_svc.js" charset="UTF-8" />
-    <file url="file://C:/git_working/zen/gui/zuiplugin_dll/app/templates/devices/devices.html" charset="UTF-8" />
-    <file url="file://C:/git_working/zen/gui/zuiplugin_dll/test/mock/gms.json" charset="UTF-8" />
-  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
 </project>
 
